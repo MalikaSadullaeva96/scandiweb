@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- nav section -->
+    <header class="header">
+        <h3 class="header__logo">
+            Product List
+        </h3>
+        <div class="header__buttons">
+          <a href="/">
+            <div class="header__add">
+                ADD
+            </div>
+          </a>
+          <a href="/" id="delete-product-btn">
+            <div class="header__delete">
+                MASS DELETE
+            </div>
+          </a>
+        </div>
+    </header>
+    <!-- main -->
+    <main class="main">
+        <div class="main__products">
+            <div class="product main__product">
+                <input type="checkbox" class="product__checkbox delete-checkbox">
+                <div class="product__items">
+                  <p class="product__item product__item_sku">JVC200123</p>
+                  <p class="product__item product__item_name">ACME DISC</p>
+                  <p class="product__item product__item_price">100$</p>
+                  <p class="product__item product__item_size">Size: 700 MB</p>
+                  <p class="product__item product__item_weight"></p>
+                  <p class="product__item product__item_dimensions"></p>
+                 </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__info">
+                Scandiweb Test assignment
+            </p>
+        </div>
+    </footer>
+ </body>
+ </html>
