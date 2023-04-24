@@ -1,0 +1,1 @@
+import switchOption from './switcher.js';
