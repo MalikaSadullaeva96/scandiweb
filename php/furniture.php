@@ -41,11 +41,18 @@ class Furniture extends Product {
     public function insertData() {
         $db = new Database();
 
+        if (!$this->isSkuUnique($this->sku)) {
+            echo "Error: A product with SKU '$this->sku' already exists.";
+            return;
+        }
+
         $stmt = $db->conn->prepare("INSERT INTO items (sku, name, price, height, width, length) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssddii", $this->sku, $this->name, $this->price, $this->height, $this->width, $this->length);
         
         if ($stmt->execute()) {
-            echo "New Furniture product inserted successfully";
+            // echo "New Furniture product inserted successfully";
+            header('Location: ../products.html');
+            exit;
         } else {
             echo "Error: " . $stmt->error;
         }

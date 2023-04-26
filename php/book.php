@@ -22,11 +22,18 @@ class Book extends Product {
         
         $db = new Database();
 
+        if (!$this->isSkuUnique($this->sku)) {
+            echo "Error: A product with SKU '$this->sku' already exists.";
+            return;
+        }
+
         $stmt = $db->conn->prepare("INSERT INTO items (sku, name, price, weight) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssdd", $this->sku, $this->name, $this->price, $this->weight);
         
         if ($stmt->execute()) {
-            echo "New Book product inserted successfully";
+            // echo "New Book product inserted successfully";
+            header('Location: ../products.html');
+            exit;
         } else {
             echo "Error: " . $stmt->error;
         }

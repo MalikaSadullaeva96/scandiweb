@@ -14,13 +14,11 @@
            Product Add
        </h3>
        <div class="header__buttons">
-         <!-- <a href="products.html"> -->
-           <div class="header__save">
-              Save
+           <div class="header__add">
+            <input type="submit" name="submit" form="product_form" value="Save" class="header__save"/>
            </div>
-         <!-- </a> -->
          <a href="/" id="delete-product-btn">
-           <div class="header__cancel">
+           <div class="header__delete">
                Cancel
            </div>
          </a>
@@ -30,9 +28,9 @@
    <!-- main -->
    <main class="main-add">
 
-<form action="./php/insert.php" method="POST" class="main-add__form1">
-    <input type="submit" name="submit">
-    <div class="main-add__form" id="product_form">
+<form action="./php/insert.php" method="POST" class="main-add__form1"  id="product_form">
+    <!-- <input type="submit" name="submit"> -->
+    <div class="main-add__form">
         <div class="main-add__product">
             <label class="main-add__label" for="sku">SKU</label>
             <input type="text" class="main-add__input" id="sku" name="sku" required>

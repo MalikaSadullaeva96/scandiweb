@@ -45,6 +45,12 @@
   padding-top: 3px;
   padding-bottom: 3px;
   margin: 0px;
+  font-size: 13px;
+}
+.header__save {
+  border: none;
+  outline: none;
+  background: none;
 }
 
 .main {
@@ -73,6 +79,7 @@
   padding-top: 30px;
   padding-bottom: 50px;
   margin: 10px 20px;
+  font-size: 13px;
 }
 .product__items {
   width: 150%;

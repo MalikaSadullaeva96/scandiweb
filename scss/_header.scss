@@ -24,4 +24,10 @@
     @extend %box-shadow;
   }
 
+  &__save {
+    border: none;
+    outline: none;
+    background : none;
+  }
+
 }

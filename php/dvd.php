@@ -21,11 +21,18 @@ class DVD extends Product {
     public function insertData() {
         $db = new Database();
 
+        if (!$this->isSkuUnique($this->sku)) {
+            echo "Error: A product with SKU '$this->sku' already exists.";
+            return;
+        }
+
         $stmt = $db->conn->prepare("INSERT INTO items (sku, name, price, size) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssds", $this->sku, $this->name, $this->price, $this->size);
         
         if ($stmt->execute()) {
-            echo "New DVD product inserted successfully";
+            // echo "New DVD product inserted successfully";
+            header('Location: ../products.html');
+            exit;
         } else {
             echo "Error: " . $stmt->error;
         }
