@@ -6,6 +6,7 @@ function createInputLabelPair(id, labelText, inputType) {
     const input = document.createElement('input');
     input.type = inputType;
     input.id = id;
+    input.name = id;
     input.classList.add('main-add__input');
     input.required = true;
     return { label, input };

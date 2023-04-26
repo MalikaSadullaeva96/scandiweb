@@ -14,43 +14,52 @@
            Product Add
        </h3>
        <div class="header__buttons">
-         <a href="/">
-           <div class="header__add">
-               Save
+         <!-- <a href="products.html"> -->
+           <div class="header__save">
+              Save
            </div>
-         </a>
+         <!-- </a> -->
          <a href="/" id="delete-product-btn">
-           <div class="header__delete">
+           <div class="header__cancel">
                Cancel
            </div>
          </a>
        </div>
+
    </header>
    <!-- main -->
    <main class="main-add">
+
+<form action="./php/insert.php" method="POST" class="main-add__form1">
+    <input type="submit" name="submit">
     <div class="main-add__form" id="product_form">
         <div class="main-add__product">
             <label class="main-add__label" for="sku">SKU</label>
-            <input type="text" class="main__input" id="sku" required>
+            <input type="text" class="main-add__input" id="sku" name="sku" required>
         </div>
         <div class="main-add__product">
             <label class="main-add__label" for="name">Name</label>
-            <input type="text" class="main__input" id="name" required>
+            <input type="text" class="main-add__input" id="name" name="name" required>
         </div>
         <div class="main-add__product">
             <label class="main-add__label" for="price">Price ($)</label>
-            <input type="number" class="main-add__input" id="price" required>
+            <input type="number" class="main-add__input" id="price" name="price" required>
         </div>
     </div>
     <div class="switch main-add__switcher">
         <label for="productType" class="switch__label">Type Switcher</label>
-        <select id="productType" class="switch__type">
+        <select id="productType" name="productType" class="switch__type">
+            <option value="" disabled selected>Type Switcher</option>
             <option value="DVD">DVD</option>
             <option value="Book">Book</option>
             <option value="Furniture">Furniture</option>
         </select>
     </div>
+
     <div class="main-add__option"></div>
+</form>
+
+   
    </main>
    <footer class="footer">
        <div class="footer__container">
