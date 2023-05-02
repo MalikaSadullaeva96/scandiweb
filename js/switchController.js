@@ -1,10 +1,7 @@
 import createInputLabelPair from './createSelectOption.js';
 import createDiv from './createDiv.js'
 
-
 console.log('JavaScript file loaded');
-
-document.addEventListener('DOMContentLoaded', () => {
   let elements;
   const form = document.querySelector('.main-add__form1');
   const productType = document.getElementById('productType');
@@ -39,5 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
   }
   productType.addEventListener('change', switchOption);
-});
+
 export default switchOption;

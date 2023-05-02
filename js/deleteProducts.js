@@ -16,7 +16,7 @@ function removeProducts() {
     formData.append('delete', '1');
     formData.append('skuList', skuList.join(','));
   
-    fetch('./php/productController.php', {
+    fetch('./php/insert.php', {
       method: 'POST',
       body: formData,
     })

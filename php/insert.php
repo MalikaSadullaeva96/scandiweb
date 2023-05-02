@@ -14,6 +14,10 @@ function insertData(Product $product)
     $product->InsertData();
 }
 
+if (isset($_POST['delete']) && isset($_POST['skuList'])) {
+  Product::deleteProducts($_POST['skuList']);
+}
+
 if (isset($_POST['submit'])) 
 {
 

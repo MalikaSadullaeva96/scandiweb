@@ -30,8 +30,8 @@ abstract class Product
     }
     $conn->close();
   }
- 
-  public static function deleteProducts($skus) 
+
+public static function deleteProducts($skus) 
 {
     $skuList = explode(',', $_POST['skuList']);
     error_log("SKU List: " . print_r($skuList, true));
@@ -41,14 +41,12 @@ abstract class Product
 
     $placeholders = implode(',', array_fill(0, count($skuList), '?'));
     $query = $conn->prepare("DELETE FROM items WHERE sku IN ($placeholders)");
-    error_log("Query: " . $query->queryString);
-    
     if ($query === false) {
         error_log("Error preparing the query: " . implode(" ", $conn->errorInfo()));
         echo 'error: Error preparing the query';
         return;
     }
-
+    
     $params = str_repeat("s", count($skuList));
     $query->bind_param($params, ...$skuList);
     
@@ -60,16 +58,7 @@ abstract class Product
     }
     echo 'success';
 }
-
-  
   abstract public function getExtraColumns();
 }
 
-if (isset($_POST['delete']) && isset($_POST['skuList'])) {
-  Product::deleteProducts($_POST['skuList']);
-}
-else {
-  http_response_code(400);
-  echo 'error: Invalid request';
-}
 ?>
