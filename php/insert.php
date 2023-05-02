@@ -6,13 +6,16 @@ error_reporting(E_ALL);
 
 require_once 'product.php';
 require_once 'book.php';
+require_once 'dvd.php';
+require_once 'furniture.php';
 
 function insertData(Product $product)
 {
     $product->InsertData();
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{
 
     $sku = $_POST['sku'];
     $name = $_POST['name'];
@@ -31,11 +34,11 @@ if (isset($_POST['submit'])) {
             insertData($book);
             break;
         case 'Furniture':
-            $height = $_POST['height'];
             $width = $_POST['width'];
             $length = $_POST['length'];
+            $height = $_POST['height'];
             $furniture = new Furniture($sku, $name, $price, $width, $length, $height);
-            insertData($width, $length, $height);
+            insertData($furniture);
             break;
         default:
             echo "Invalid product type";

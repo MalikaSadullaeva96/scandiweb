@@ -1,7 +1,8 @@
 <?php
   require_once 'connection.php';
 
-  class FetchProducts {
+  class FetchProducts 
+  {
     public function fetchAll() {
         $db = new Database();
 

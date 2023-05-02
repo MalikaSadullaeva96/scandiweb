@@ -2,7 +2,7 @@ import createInputLabelPair from './create_select_option.js';
 import createDiv from './create_div.js'
 
 
-console.log('JavaScript file loaded'); // Add this line
+console.log('JavaScript file loaded');
 
 document.addEventListener('DOMContentLoaded', () => {
   let elements;
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elements = createInputLabelPair('weight', 'Weight (Kg)', 'number');
         const bookDiv = createDiv('main-add__type', elements.label, elements.input);
         option.append(bookDiv);
-        console.log('Book selected:', elements); // Add this line
+        console.log('Book selected:', elements); 
         break;  
       case 'Furniture':
         const height = createInputLabelPair('height', 'Height (CM)', 'number');
