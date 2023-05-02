@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("./php/fetch_products.php")
+function loadProducts() {
+    fetch("./php/fetchProducts.php")
       .then((response) => response.json())
       .then((products) => {
         const mainProducts = document.querySelector(".main__products");
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           const checkbox = document.createElement("input");
           checkbox.type = "checkbox";
+          checkbox.dataset.sku = product.sku; //test
           checkbox.className = "product__checkbox delete-checkbox";
           productDiv.appendChild(checkbox);
   
@@ -45,4 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
-  });
+  }
+  document.addEventListener("DOMContentLoaded", loadProducts);
+  export default loadProducts;

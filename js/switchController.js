@@ -1,5 +1,5 @@
-import createInputLabelPair from './create_select_option.js';
-import createDiv from './create_div.js'
+import createInputLabelPair from './createSelectOption.js';
+import createDiv from './createDiv.js'
 
 
 console.log('JavaScript file loaded');

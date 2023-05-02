@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'product.php';
+require_once 'productController.php';
 require_once 'book.php';
 require_once 'dvd.php';
 require_once 'furniture.php';
